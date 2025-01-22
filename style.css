@@ -69,4 +69,8 @@ le layout
 .hero {
   background-image: url("img/maldives.jpg");
   min-height: 100vh;
+}
+
+.hero__titre {
+  text-shadow: 2px 2px 4px #006f4f;
 }/*# sourceMappingURL=style.css.map */
