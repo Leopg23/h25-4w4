@@ -1,4 +1,6 @@
-# exercice #1
-## Concevoir une page d'acceuil en HTML/CSS a partir d'une maquette 
+# Exercice #1
+## Concevoir une page d'accueil en HTML/CSS à partir d'une maquette
 ### Auteur: Leo Paquet-Gauthier
-la realisation de ce prototype represente une premiere etape pour la conception d'un theme Wordpress.
+La réalisation de ce prototype représente une première étape pour la conception d'un thème Wordpress.
+
+#### Github-page : https://leopg23.github.io/h25-4w4/ 
