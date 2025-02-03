@@ -14,12 +14,20 @@
             flex-direction: column;
             width: 100vw;
         }
+        
 
+        gap: 5px;
+        padding-right: 10px;
         width: auto;
         position: static;
         flex-direction: row;
         display: flex;
         align-items: center;
         background-color: transparent;                                   
+    }
+
+    &__logo{
+        padding-left: 10px;
+        width: clamp(100px, 20vw, 200px);
     }
 }
