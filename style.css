@@ -209,6 +209,21 @@ main {
   padding-left: 10px;
   width: clamp(100px, 20vw, 200px);
 }
+.entete__checkbox {
+  display: none;
+}
+.entete__checkbox:checked ~ .entete__navigation {
+  display: flex;
+}
+.entete__menu_burger {
+  z-index: 1;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .entete__menu_burger {
+    display: block;
+  }
+}
 
 .galerie {
   width: 90vw;

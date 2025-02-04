@@ -14,6 +14,8 @@
             padding: 20px;
             flex-direction: column;
             width: 100vw;
+
+            
         }
         
 
@@ -30,5 +32,19 @@
     &__logo{
         padding-left: 10px;
         width: clamp(100px, 20vw, 200px);
+    }
+
+    &__checkbox{
+        display: none;
+    }
+    &__checkbox:checked ~ &__navigation{
+        display: flex;
+    }
+    &__menu_burger{
+        z-index: 1;
+        display: none;
+        @media screen and (max-width: 768px) {
+            display: block;  
+        }
     }
 }
