@@ -6,6 +6,7 @@
     &__navigation {
 
         @media screen and (max-width: 768px) {
+            display: none;
             position: absolute;
             top: 0;
             right: 0;
