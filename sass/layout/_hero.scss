@@ -1,32 +1,5 @@
 .hero{
     background-image: url("images/maldives.jpg");
+    background-repeat: no-repeat;
     min-height: 100vh;
-    
-    &__contenu{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    }
-
-    &__titre{
-        text-shadow: 2px 2px 2px rgb(5, 156, 123);
-    }
-
-    &__bouton{
-        width: min-content;
-        white-space: nowrap;
-        
-        background-color: rgb(5, 156, 123);
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: box-shadow 0.2s, background-color 0.2s;
-        &:hover{
-            background-color: rgb(20, 144, 117);
-            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.241);
-        }
-    }
-    
 }

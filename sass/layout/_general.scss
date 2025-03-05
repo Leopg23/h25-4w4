@@ -1,13 +1,10 @@
-main{
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .global{
     max-width: 1100px;
     padding: 10vh 5vw;
+    
 }
 
+.populaire .global {
+    display: flex;
+    flex-wrap: wrap;
+}

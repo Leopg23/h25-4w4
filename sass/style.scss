@@ -1,5 +1,5 @@
 /*
-Theme Name: TP1 Eddy Martin
+Theme Name: TP1 Leo Paquet-Gauthier 3.0
 Theme URI: https://referenced.ca
 Author: Eddy Martin
 Author URI: https://github.com/eddytuto
@@ -30,11 +30,13 @@ Les composants
 //////////////////////////////////// */
 @import "composants/menu";
 @import "composants/recherche";
-@import "composants/inscription";
+@import "composants/carte";
+@import "composants/galerie";
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
 @import "layout/general";
 @import "layout/entete";
-@import "layout/galerie";
 @import "layout/hero";
+@import "layout/footer";
