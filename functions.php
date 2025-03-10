@@ -1,6 +1,38 @@
 <?php
 
-function mon_theme_supports() {
+function theme_tp_customize_register($wp_customize)
+{
+  // Le code pour ajouter des sections, des réglages et des contrôles ira ici.
+  // Création d'une nouvelle section dans le customizer
+  $wp_customize->add_section('hero_section', array(
+    'title' => __('Section Hero', 'theme_tp'),
+    'priority' => 30,
+  ));
+  ////////////////////////////////////////////// ajout de la donnée
+  $wp_customize->add_setting('hero_auteur', array(
+    'default' => __('Léo Paquet-Gauthier', 'theme_tp'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée
+  $wp_customize->add_control('hero_auteur', array(
+    'label' => __('Hero Title', 'theme_tp'),
+    'section' => 'hero_section',
+    'type' => 'text',
+  ));
+  ////////////////////////////////////////////// image en arrière plan
+  $wp_customize->add_setting('hero_background', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
+    'label' => __('Hero Background Image', 'theme_31w'),
+    'section' => 'hero_section',
+  )));
+}
+add_action('customize_register', 'theme_tp_customize_register');
+function mon_theme_supports()
+{
 
   add_theme_support('title-tag');
   add_theme_support('menus');
@@ -10,16 +42,16 @@ function mon_theme_supports() {
     'width'       => 150,
     'flex-height' => true,
     'flex-width'  => true,
-));
-
+  ));
 }
-add_action( 'after_setup_theme', 'mon_theme_supports' );
+add_action('after_setup_theme', 'mon_theme_supports');
 
 
-function theme_4w4_enqueue_styles() { 
-wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');  
-wp_enqueue_style('mon-style-style', get_stylesheet_uri()); 
-} 
+function theme_4w4_enqueue_styles()
+{
+  wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');
+  wp_enqueue_style('mon-style-style', get_stylesheet_uri());
+}
 /* 
 */
 add_action('wp_enqueue_scripts', 'theme_4w4_enqueue_styles');
@@ -33,14 +65,12 @@ add_action('wp_enqueue_scripts', 'theme_4w4_enqueue_styles');
  */
 
 
-function modifie_requete_principal( $query ) {
-    if ( $query->is_home() && $query->is_main_query() && ! is_admin() ) {
-      $query->set( 'category_name', 'populaire' );
-      $query->set( 'orderby', 'title' );
-      $query->set( 'order', 'ASC' );
-      }
-     }
-     add_action( 'pre_get_posts', 'modifie_requete_principal' );
-
-
-?>
+function modifie_requete_principal($query)
+{
+  if ($query->is_home() && $query->is_main_query() && ! is_admin()) {
+    $query->set('category_name', 'populaire');
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+  }
+}
+add_action('pre_get_posts', 'modifie_requete_principal');

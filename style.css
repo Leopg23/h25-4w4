@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Theme Name: TP1 Leo Paquet-Gauthier
+Theme Name: TP1 Leo Paquet-Gauthier h25_4w4
 Theme URI: https://referenced.ca
 Author: Leo Paquet-Gauthier
 Author URI: https://github.com/Leopg23/h25-4w4/tree/tp1
@@ -192,6 +192,40 @@ Les layouts
   background-image: url("images/maldives.jpg");
   background-repeat: no-repeat;
   min-height: 100vh;
+  background-size: cover;
+}
+.hero__contenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 30%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+.hero__contenu h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.hero__contenu p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.hero__contenu a {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.hero__contenu a:hover {
+  background-color: black;
+  color: white;
 }
 
 /*
