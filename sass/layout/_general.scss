@@ -1,7 +1,7 @@
-.populaire .global {
-    display: flex;
-    flex-wrap: wrap;
-}
+// .populaire .global {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
 
 .populaire {
     display: flex;
@@ -12,5 +12,9 @@
 .global{
     max-width: 90vw;
     padding: 10vh 5vw;
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 240px));
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
 }
