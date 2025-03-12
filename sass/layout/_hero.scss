@@ -1,39 +1,52 @@
-.hero{
-    background-image: url("images/maldives.jpg");
-    background-repeat: no-repeat;
+.hero {
+  background-image: url("images/maldives.jpg");
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-size: cover;
+  &__contenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 260px;
+    width: 30%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 20px;
     min-height: 100vh;
-    background-size: cover;
-    &__contenu{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        width: 30%; 
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        color: white;
-        text-align: center;
-        padding: 20px;
-        min-height: 100vh;
-        h1{
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        p{
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        a{
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            &:hover{
-                background-color: black;
-                color: white;
-            }
-        }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    a {
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+
+  &__titre,
+  &__description,
+  &__courriel,
+  &__adresse,
+  &__auteur {
+    text-align: left;
+  }
+
+  &__icone{
+    margin-top: 10px;
+  }
 }

@@ -2,6 +2,7 @@
     <?php 
         $hero_auteur = get_theme_mod('hero_auteur', 'Default Title');
         $hero_background = get_theme_mod('hero_background', '');
+        $hero_couleur = get_theme_mod('hero_couleur', '');
     ?>
     <section class="hero" style="background-image: url('<?php echo $hero_background; ?>')">
         <div class="hero__contenu global">
@@ -19,10 +20,11 @@
                 <?php echo $hero_auteur; ?>
             </p>
             <div class="hero__icone">
-                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color= <?php echo "ffffff"; ?>" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color= <?php echo "ffffff"; ?>" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color= <?php echo "ffffff"; ?>" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color= <?php echo "ffffff"; ?>" width="20" height="20">
+                
+                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color= <?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color= <?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color= <?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color= <?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
             </div>
         </div>
     </section>

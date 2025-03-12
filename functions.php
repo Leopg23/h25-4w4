@@ -1,5 +1,22 @@
 <?php
 
+//----------------------------------------------------------------------------------P1_CUSTOMIZER
+// CETTE PARTIE SERT A INSERER DES VARIABLE A UTILISER A TRAVERS LE SITE QUI POURONT ETRE CHANGEES DANS 
+// L'APPLI WORDPRESS
+// 
+// TEMPLATE POUR UNE VARIABLE
+//  ////////////////////////////////////////////// EXPLICATION DE LA VARIABLE
+//  $wp_customize->add_setting('NOM DE LA VARIABLE', '');', array(
+//   'default' => '',
+//   'sanitize_callback' => 'esc_url_raw',
+// ));
+// TEMPLATE POUR UN CONTROLLER DE DONNES
+// ////////////////////////////////////////////// EXPICATION DU CONTROLE
+// $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'NOM DE LA VARIABLE A CONTROLLER', array(
+//   'label' => __('NOM QUI SERA AFFICHE DANS WP', 'theme_tp(LE NOM DU THEME DOIT ETRE PAREIL PARTOUT)'),
+//   'section' => 'SA SECTION AUQUEL LE CONTROL SERA ATTACHE DANS WP',
+// )));
+
 function theme_tp_customize_register($wp_customize)
 {
   // Le code pour ajouter des sections, des réglages et des contrôles ira ici.
@@ -26,10 +43,30 @@ function theme_tp_customize_register($wp_customize)
   ));
   ////////////////////////////////////////////// ajout du controle de la donnée
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
-    'label' => __('Hero Background Image', 'theme_31w'),
+    'label' => __('Hero Background Image', 'theme_tp'),
+    'section' => 'hero_section',
+  )));
+
+  ////////////////////////////////////////////// couleure des caractères de la zone hero
+  $wp_customize->add_setting('hero_couleur', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_couleur', array(
+    'label' => __('Hero Couleur', 'theme_tp'),
     'section' => 'hero_section',
   )));
 }
+
+
+//----------------------------------------------------------------------------------P2_OPTIONS
+
+// CETTE PARTIE SERT A AJOUTER DES OPTIONS DANS WORDPRESS 
+// EXEMPLE: AJOUTER UN MENU DANS LE HEADER
+// CERTAINE OPTION DE WP SONT OPTIONELLES ET DOIVENT DONC ETRE AJOUTEES
+// LA TOTALITE DES OPTION DISPONIBLE EST DANS LA DOC DE WP ET PEUVENT ETRE 
+// AJOUTEES AVEC LA FONCTION ADD_THEME_SUPPORT
 add_action('customize_register', 'theme_tp_customize_register');
 function mon_theme_supports()
 {
@@ -47,6 +84,10 @@ function mon_theme_supports()
 add_action('after_setup_theme', 'mon_theme_supports');
 
 
+// CETTE PARTIE SERT A METTRE LE CSS DU SITE DANS LE HEADER.
+// SA SERT A REGLER LES PROBLEMES DE CSS QUI NE S'APPLIQUENT PAS
+// DANS LE BON ORDRE
+// CETTE PARTIE EST OPTIONNELLE MAIS RECOMMANDEE
 function theme_4w4_enqueue_styles()
 {
   wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');

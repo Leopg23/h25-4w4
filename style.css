@@ -184,7 +184,7 @@ Les layouts
   }
 }
 .entete .custom-logo {
-  max-width: 150px;
+  max-width: 100px;
   height: auto;
 }
 
@@ -199,6 +199,7 @@ Les layouts
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  min-width: 260px;
   width: 30%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -226,6 +227,12 @@ Les layouts
 .hero__contenu a:hover {
   background-color: black;
   color: white;
+}
+.hero__titre, .hero__description, .hero__courriel, .hero__adresse, .hero__auteur {
+  text-align: left;
+}
+.hero__icone {
+  margin-top: 10px;
 }
 
 /*
