@@ -4,19 +4,24 @@
         $hero_background = get_theme_mod('hero_background', '');
         $hero_couleur = get_theme_mod('hero_couleur', '');
     ?>
+    <style>
+        .hero__couleur {
+            color: <?php echo $hero_couleur; ?>;
+        }
+    </style>
     <section class="hero" style="background-image: url('<?php echo $hero_background; ?>')">
         <div class="hero__contenu global">
-            <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
-            <p class="hero__description">
+            <h1 class="hero__titre hero__couleur"><?php bloginfo('name'); ?></h1>
+            <p class="hero__description hero__couleur">
             <?php bloginfo('description'); ?>
             </p>
-            <p class="hero__courriel">
+            <p class="hero__courriel hero__couleur">
             <?php bloginfo('admin_email'); ?>
             </p>
-            <p class="hero__adresse">
+            <p class="hero__adresse hero__couleur">
                 5800 Sherbrooke-est - Montréal (Québec) H1X 2A2
             </p>
-            <p class="hero__auteur">
+            <p class="hero__auteur hero__couleur">
                 <?php echo $hero_auteur; ?>
             </p>
             <div class="hero__icone">

@@ -99,64 +99,40 @@ Les composants
   padding: 3px;
 }
 
-.carte-localisation {
+.carte {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 400px;
-  margin: 10px;
 }
-.carte-localisation__image img {
+.carte--grande {
+  flex: 1 1 240px;
+  max-width: 240px;
+  margin: 1rem;
+}
+.carte__image img {
   width: 100%;
-  height: auto;
 }
-.carte-localisation__contenu {
-  padding: 16px;
-  background-color: #fff;
+.carte__contenu {
+  background-color: aliceblue;
 }
-.carte-localisation__contenu__titre {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
-}
-.carte-localisation__contenu__description {
-  font-size: 1rem;
-  margin-bottom: 16px;
-}
-.carte-localisation__contenu__bouton {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #0073e6;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-.carte-localisation__contenu__bouton--actif {
-  background-color: #005bb5;
-}
-.carte-localisation__contenu__bouton:hover {
-  background-color: #005bb5;
-}
-.carte-localisation__contenu__temperature {
-  font-size: 0.875rem;
-  color: #555;
-}
-
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
-.global {
-  max-width: 1100px;
-  padding: 10vh 5vw;
-}
-
 .populaire .global {
   display: flex;
   flex-wrap: wrap;
+}
+
+.populaire {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.global {
+  max-width: 90vw;
+  padding: 10vh 5vw;
 }
 
 .entete {
@@ -191,7 +167,7 @@ Les layouts
 .hero {
   background-image: url("images/maldives.jpg");
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 80vh;
   background-size: cover;
 }
 .hero__contenu {
@@ -206,7 +182,7 @@ Les layouts
   color: white;
   text-align: center;
   padding: 20px;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 .hero__contenu h1 {
   font-size: 3rem;

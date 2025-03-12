@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 /**
  * Template-part carte
  */
@@ -18,14 +18,14 @@
     <?php  the_category();  ?>
     <p>Température maximum : <?php the_field('temperature_maximum'); ?> &#8451;</p>
   </div>
-</article> -->
+</article>
 
 <?php
 /**
  * Template-part carte de localisation
  */
 ?>
-<article class="carte-localisation">
+<!-- <article class="carte-localisation">
   <figure class="carte-localisation__image">
     <img src="location.jpg" alt="Image de localisation">
   </figure>
@@ -35,4 +35,4 @@
     <a class="carte-localisation__bouton carte-localisation__bouton--actif" href="<?php the_permalink(); ?>">Lire la suite...</a>
     <p class="carte-localisation__temperature">Température maximale : <?php the_field('temperature_maximum'); ?> &#8451;</p>
   </div>
-</article>
+</article> -->

@@ -1,7 +1,7 @@
 .hero {
   background-image: url("images/maldives.jpg");
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 80vh;
   background-size: cover;
   &__contenu {
     display: flex;
@@ -15,7 +15,7 @@
     color: white;
     text-align: center;
     padding: 20px;
-    min-height: 100vh;
+    min-height: 80vh;
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
