@@ -4,6 +4,14 @@
     justify-content: space-between;
     max-width: 300px; 
     height: 100%;
+
+    &__infos{
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;  
+      
+    }
+
    &--grande{
     flex: 1 1 300px;
     max-width: 300px;
@@ -19,9 +27,10 @@
        background-color: aliceblue; 
    }
    &__titre{
-    
+    color: inherit; 
+    text-decoration: none; 
    }
-   &__description{}
+   &__description
    &__bouton{
     &--actif{}
    }
