@@ -200,16 +200,22 @@ Les layouts
 
 .hero {
   background-repeat: no-repeat;
-  min-height: 80vh;
   background-size: cover;
 }
 .hero__contenu {
   display: grid;
-  grid-template: 1fr 1fr 50px/1fr;
-  padding: 0 0 0 10vw;
+  grid-template: 100px 150px 50px/1fr;
+  padding: 0 0 0 5vw;
   margin: 0;
   gap: 0;
+  min-height: 80vh;
   width: 50%;
+}
+.hero__contenu .hero__titre {
+  align-self: end;
+}
+.hero__contenu .hero__description {
+  align-self: start;
 }
 
 /*
