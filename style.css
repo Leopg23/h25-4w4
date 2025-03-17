@@ -162,6 +162,8 @@ Les layouts
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #232323;
+  color: #e3e3e3;
 }
 .entete__navigation {
   width: auto;
@@ -183,8 +185,11 @@ Les layouts
     width: 100vw;
   }
 }
+.entete__logo {
+  margin: 0;
+}
 .entete .custom-logo {
-  max-width: 100px;
+  max-width: clamp(100px, 20vw, 200px);
   height: auto;
 }
 
@@ -195,18 +200,12 @@ Les layouts
   background-size: cover;
 }
 .hero__contenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  min-width: 260px;
-  width: 30%;
-  height: 100%;
+  display: grid;
+  grid-template: 1fr/repeat(6, 1fr);
+  width: 50%;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  text-align: center;
   padding: 20px;
-  min-height: 80vh;
 }
 .hero__contenu h1 {
   font-size: 3rem;

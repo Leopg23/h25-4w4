@@ -4,18 +4,15 @@
   min-height: 80vh;
   background-size: cover;
   &__contenu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    min-width: 260px;
-    width: 30%;
-    height: 100%;
+    display: grid;
+    grid-template: 1fr / repeat(6, 1fr);
+    width: 50%;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    text-align: center;
+
     padding: 20px;
-    min-height: 80vh;
+
+
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;

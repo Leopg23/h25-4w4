@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background-color: #232323;
+    color: #e3e3e3;
+
     &__navigation {
         @media screen and (max-width: 800px) {
             position : absolute;
@@ -23,8 +27,11 @@
                                                                    
     }
 
+    &__logo{
+        margin: 0;
+    }
     .custom-logo{
-        max-width: 100px;
+        max-width: clamp(100px, 20vw, 200px);
         height: auto;
     }
 }
