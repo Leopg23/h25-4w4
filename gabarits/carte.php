@@ -2,16 +2,15 @@
 /**
  * Template-part carte
  */
+
 ?>
-<article class="carte carte--grande">
-  <figure class="carte__image">
-    <!-- <img src="voyage.jpg" alt="Image de voyage"> -->
-     <!-- <?php
-        if (has_post_thumbnail()) {
-        the_post_thumbnail('thumbnail'); }
-      ?>     -->
-    </figure>
-  <div class="carte__contenu">
+<article class="carte carte--grande"style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');?>')">
+  <!-- <figure class="carte__image">
+     <?php
+        
+      ?>     
+    </figure> -->
+  <div class="carte__contenu" >
     
     <h4 class="carte__titre"><?php the_title(); ?></h4>
     <p class="carte__description"><?php echo wp_trim_words(get_the_content(),10, " ... " ); ?></p>
