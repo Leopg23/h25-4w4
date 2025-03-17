@@ -23,7 +23,7 @@ Les balise de bases
 //////////////////////////////////// */
 body {
   font-size: 16px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -89,7 +89,7 @@ Les composants
   display: flex;
   height: 1.6rem;
   width: 14rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0 5px 0 3rem;
   border-radius: 5px;
 }
@@ -97,15 +97,17 @@ Les composants
   border: none;
   outline: none;
   background-color: rgba(0, 0, 0, 0.01);
+  color: #e3e3e3;
   flex: 1 0 auto;
   padding: 3px;
 }
 .recherche__input:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 .recherche__input::placeholder {
   font-size: large;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.5);
   font-style: italic;
 }
 .recherche__img {
@@ -119,6 +121,9 @@ Les composants
   justify-content: space-between;
   max-width: 300px;
   height: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 .carte__infos {
   display: flex;
@@ -132,9 +137,6 @@ Les composants
 .carte__image img {
   width: 100%;
 }
-.carte__contenu {
-  background-color: aliceblue;
-}
 .carte__titre {
   color: inherit;
   text-decoration: none;
@@ -145,7 +147,7 @@ Les layouts
 .populaire {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .global {
@@ -201,37 +203,11 @@ Les layouts
 }
 .hero__contenu {
   display: grid;
-  grid-template: 1fr/repeat(6, 1fr);
+  grid-template: 1fr 1fr 50px/1fr;
+  padding: 0 0 0 10vw;
+  margin: 0;
+  gap: 0;
   width: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 20px;
-}
-.hero__contenu h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-.hero__contenu p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-.hero__contenu a {
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.hero__contenu a:hover {
-  background-color: black;
-  color: white;
-}
-.hero__titre, .hero__description, .hero__courriel, .hero__adresse, .hero__auteur {
-  text-align: left;
-}
-.hero__icone {
-  margin-top: 10px;
 }
 
 /*

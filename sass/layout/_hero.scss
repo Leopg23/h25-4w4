@@ -3,47 +3,14 @@
   background-repeat: no-repeat;
   min-height: 80vh;
   background-size: cover;
+
   &__contenu {
     display: grid;
-    grid-template: 1fr / repeat(6, 1fr);
+    grid-template: 1fr 1fr 50px / 1fr;
+    padding: 0 0 0 10vw;
+    margin: 0;
+    gap: 0;
+
     width: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-
-    padding: 20px;
-
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-    a {
-      background-color: white;
-      color: black;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      &:hover {
-        background-color: black;
-        color: white;
-      }
-    }
-  }
-
-  &__titre,
-  &__description,
-  &__courriel,
-  &__adresse,
-  &__auteur {
-    text-align: left;
-  }
-
-  &__icone{
-    margin-top: 10px;
   }
 }

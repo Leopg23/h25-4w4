@@ -2,7 +2,7 @@
     display:flex;
     height: 1.6rem;
     width : 14rem;
-    border: 1px solid  rgba(0, 0, 0, 0.1);
+    border: 1px solid  rgba(255, 255, 255, 0.1);
     margin:0 5px 0 3rem;
     border-radius: 5px;
 // le & prend la valeur du sélecteur parent 
@@ -10,14 +10,16 @@
         border : none;
         outline: none;
         background-color: rgba(0,0,0, .01);
+        color: #e3e3e3;
         flex : 1 0 auto;
         padding : 3px;
         &:hover{
-            background-color: rgba(0,0,0, .05); 
+            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
         &::placeholder{
             font-size: large;
-            color: rgba(0,0,0, .2);
+            color: rgba(255, 255, 255, 0.5);
             font-style : italic;
         }
 
