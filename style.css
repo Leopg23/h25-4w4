@@ -225,10 +225,6 @@ body {
   background-color: #232323;
 }
 
-.cartes_frontpage {
-  translate: 0 -20vh;
-}
-
 .populaire {
   display: flex;
   justify-content: center;
@@ -241,8 +237,10 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 240px));
   gap: 30px;
-  justify-content: center;
   align-items: center;
+}
+.global article {
+  translate: 0 -20vh;
 }
 
 .entete {
@@ -263,6 +261,7 @@ body {
   flex-direction: row;
   background-color: transparent;
   text-wrap: nowrap;
+  margin-right: 2rem;
 }
 @media screen and (max-width: 800px) {
   .entete__navigation {
@@ -325,12 +324,14 @@ body {
 }
 .hero__contenu {
   display: grid;
+  align-items: center;
   grid-template: 50px 100px 50px/1fr;
   padding: 0 0 0 5vw;
-  margin: 0;
+  margin: 10 0;
   gap: 0;
-  min-height: 70vh;
+  min-height: 60vh;
   width: 50%;
+  align-content: center;
 }
 .hero__contenu .hero__titre {
   align-self: end;
@@ -344,13 +345,14 @@ body {
   --------------------------------- Layout du pied de page
 */
 footer {
-  background-color: rgb(162, 201, 225);
-  color: #000;
+  background-color: rgb(103, 30, 30);
+  color: #ffffff;
 }
 
 .piedpage {
-  display: flex;
-  flex-direction: column;
+  max-height: 30vh;
+  display: grid;
+  grid-template: 1fr/repeat(3, 1fr);
 }
 .piedpage__s1 {
   display: flex;

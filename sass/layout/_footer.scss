@@ -3,13 +3,15 @@
 */
 
 footer{
-  background-color: rgb(162, 201, 225);
-  color : #000;
+  background-color: rgb(103, 30, 30);
+  color : #ffffff;
 }
 
 .piedpage{
-    display: flex;
-    flex-direction: column;
+    max-height: 30vh;
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+
     &__s1{
         display: flex;
         flex-wrap: wrap;
