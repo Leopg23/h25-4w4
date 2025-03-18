@@ -101,6 +101,7 @@ Les composants
 }
 
 .recherche {
+  order: 2;
   display: flex;
   height: 1.6rem;
   width: fit-content;
@@ -112,6 +113,11 @@ Les composants
 }
 .recherche:hover > input::placeholder {
   color: rgb(219, 219, 219);
+}
+@media screen and (min-width: 1200px) {
+  .recherche {
+    display: block !important;
+  }
 }
 .recherche__input {
   border: none;
@@ -249,14 +255,14 @@ body {
   display: none;
 }
 .entete__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: auto;
   position: static;
   flex-direction: row;
   background-color: transparent;
   text-wrap: nowrap;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 @media screen and (max-width: 800px) {
   .entete__navigation {
@@ -268,8 +274,42 @@ body {
     width: 100vw;
   }
 }
-.entete__navigation .bouton_ouvrir, .entete__navigation .bouton_fermer {
+.entete__navigation .bouton_toggle {
+  order: 1;
+  cursor: pointer;
+  user-select: none;
+}
+@media screen and (min-width: 1200px) {
+  .entete__navigation .bouton_toggle {
+    display: none;
+  }
+}
+.entete__navigation .bouton_toggle .fleche {
   display: none;
+  font-size: 1.2rem;
+}
+.entete__navigation .bouton_toggle .droite {
+  display: block;
+}
+.entete__navigation .entete__toggle_categories:checked + .bouton_toggle ~ .recherche {
+  display: none;
+}
+.entete__navigation .entete__toggle_categories:checked + .bouton_toggle ~ .entete__menu .menu-item {
+  display: inline !important;
+}
+.entete__navigation .entete__toggle_categories:checked + .bouton_toggle .droite {
+  display: none;
+}
+.entete__navigation .entete__toggle_categories:checked + .bouton_toggle .gauche {
+  display: block;
+  margin-right: clamp(10px, 2vw, 20px);
+}
+.entete__logo {
+  margin: 0;
+}
+.entete__logo .custom-logo {
+  max-width: clamp(100px, 20vw, 200px);
+  height: auto;
 }
 .entete__logo {
   margin: 0;

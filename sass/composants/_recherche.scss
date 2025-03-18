@@ -1,4 +1,6 @@
 .recherche {
+  order: 2;
+
   display: flex;
   height: 1.6rem;
   width: fit-content;
@@ -9,6 +11,10 @@
   }
   &:hover>input::placeholder{
     color: rgb(219, 219, 219);
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: block !important;
   }
   // le & prend la valeur du sélecteur parent
   &__input {

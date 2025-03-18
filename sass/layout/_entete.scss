@@ -7,8 +7,18 @@
   input[type="checkbox"] {
     display: none;
   }
-  
+
   &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: auto;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    text-wrap: nowrap;
+
     @media screen and (max-width: 800px) {
       position: absolute;
       top: 0;
@@ -18,20 +28,55 @@
       flex-direction: column;
       width: 100vw;
     }
-    width: auto;
-    position: static;
-    flex-direction: row;
-    background-color: transparent;
-    text-wrap: nowrap;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .bouton_toggle {
+      order: 1;
 
-      .bouton_ouvrir, .bouton_fermer {
+      cursor: pointer;
+      user-select: none;
+
+      @media screen and (min-width: 1200px) {
         display: none;
       }
-    
+
+      .fleche {
+        display: none;
+        font-size: 1.2rem;
+      }
+
+      .droite {
+        display: block;
+      }
+    }
+
+    // Quand la checkbox est cochée, on inverse les flèches
+    .entete__toggle_categories:checked + .bouton_toggle {
+      ~ .recherche {
+        display: none;
+      }
+
+      ~ .entete__menu .menu-item {
+        display: inline !important; // force l'affichage
+      }
+
+      .droite {
+        display: none;
+      }
+
+      .gauche {
+        display: block;
+        margin-right: clamp(10px, 2vw, 20px);
+      }
+    }
+  }
+
+  &__logo {
+    margin: 0;
+
+    .custom-logo {
+      max-width: clamp(100px, 20vw, 200px);
+      height: auto;
+    }
   }
 
   &__logo {
