@@ -2,8 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background-color: #232323;
     color: white;
 
     &__navigation {
@@ -20,7 +18,8 @@
         position : static;
         flex-direction: row; 
         background-color: transparent;
-
+        text-wrap: nowrap;
+        
         display: flex;
         justify-content: space-between;
         align-items: center;

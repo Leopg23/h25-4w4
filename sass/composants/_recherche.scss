@@ -2,24 +2,24 @@
     display:flex;
     height: 1.6rem;
     width : 14rem;
-    border: 1px solid  rgba(255, 255, 255, 0.1);
+    border: 1.9px solid  rgb(255, 255, 255);
     margin:0 5px 0 3rem;
     border-radius: 5px;
+    
 // le & prend la valeur du sélecteur parent 
     &__input{
         border : none;
         outline: none;
-        background-color: rgba(0,0,0, .01);
-        color: #e3e3e3;
+        color: white;
         flex : 1 0 auto;
         padding : 3px;
+        background-color: rgba(0,0,0, 0);
         &:hover{
-            border-radius: 5px;
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            background-color: rgba(0,0,0, .3);
         }
         &::placeholder{
             font-size: large;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgb(255, 255, 255);
             font-style : italic;
         }
 
@@ -28,8 +28,5 @@
     &__img{
         flex: 0 0 20px; 
         padding : 3px;
-
-
-
     }
 }
