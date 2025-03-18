@@ -74,9 +74,24 @@ Les composants
   list-style-type: none;
   gap: 10px 0;
 }
-@media screen and (max-width: 800px) {
-  .menu {
-    flex-direction: column;
+.menu-item {
+  flex: 1 1 auto;
+}
+@media screen and (max-width: 1200px) {
+  .menu-item {
+    display: none;
+  }
+  .menu-item:nth-child(1) {
+    display: inline;
+  }
+  .menu-item:nth-child(2) {
+    display: inline;
+  }
+  .menu-item:nth-child(3) {
+    display: inline;
+  }
+  .menu-item:nth-child(4) {
+    display: inline;
   }
 }
 .menu-item a {
@@ -88,10 +103,15 @@ Les composants
 .recherche {
   display: flex;
   height: 1.6rem;
-  width: 14rem;
-  border: 1.9px solid rgb(255, 255, 255);
-  margin: 0 5px 0 3rem;
-  border-radius: 5px;
+  width: fit-content;
+  border-bottom: 1.9px solid;
+  margin: 0 5px 0 1rem;
+}
+.recherche:hover {
+  color: rgb(219, 219, 219);
+}
+.recherche:hover > input::placeholder {
+  color: rgb(219, 219, 219);
 }
 .recherche__input {
   border: none;
@@ -100,11 +120,10 @@ Les composants
   flex: 1 0 auto;
   padding: 3px;
   background-color: rgba(0, 0, 0, 0);
-}
-.recherche__input:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  width: fit-content;
 }
 .recherche__input::placeholder {
+  width: fit-content;
   font-size: large;
   color: rgb(255, 255, 255);
   font-style: italic;
@@ -226,6 +245,9 @@ body {
   align-items: center;
   color: white;
 }
+.entete input[type=checkbox] {
+  display: none;
+}
 .entete__navigation {
   width: auto;
   position: static;
@@ -241,11 +263,13 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: white;
     padding: 20px;
     flex-direction: column;
     width: 100vw;
   }
+}
+.entete__navigation .bouton_ouvrir, .entete__navigation .bouton_fermer {
+  display: none;
 }
 .entete__logo {
   margin: 0;

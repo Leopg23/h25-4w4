@@ -1,36 +1,44 @@
-.entete{
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  &__navigation {
+    @media screen and (max-width: 800px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      // background-color: white;
+      padding: 20px;
+      flex-direction: column;
+      width: 100vw;
+    }
+    width: auto;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    text-wrap: nowrap;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
 
-    &__navigation {
-        @media screen and (max-width: 800px) {
-            position : absolute;
-            top:0;
-            right:0;
-            background-color: white;
-            padding : 20px;
-            flex-direction: column; 
-            width : 100vw;
-        }
-        width : auto;
-        position : static;
-        flex-direction: row; 
-        background-color: transparent;
-        text-wrap: nowrap;
-        
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-                                                                   
-    }
+      .bouton_ouvrir, .bouton_fermer {
+        display: none;
+      }
+    
+  }
 
-    &__logo{
-        margin: 0;
-    }
-    .custom-logo{
-        max-width: clamp(100px, 20vw, 200px);
-        height: auto;
-    }
+  &__logo {
+    margin: 0;
+  }
+  .custom-logo {
+    max-width: clamp(100px, 20vw, 200px);
+    height: auto;
+  }
 }

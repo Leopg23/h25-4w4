@@ -24,8 +24,16 @@
                     'container' => 'nav',
                     'container_class' => 'entete__menu'
                 )); ?>
-                <?php get_search_form() ?>
 
+                <input type="checkbox" class="entete__ouvrir_categories" id="ouvrir_categories">
+                <label for="ouvrir_categories" class="bouton_ouvrir">&#9205;</label>
+
+                <input type="checkbox" class="entete__fermer_categories" id="fermer_categories">
+                <label for="ouvrir_categories" class="bouton_fermer">&#9204;</label>
+
+                
+                <?php get_search_form() ?>
+                
             </div> <!-- fin entete__navigation  -->
         </div>
     </header>
