@@ -20,20 +20,23 @@
         }
         ?>
       </figure>
+
+
+      <input type="checkbox" class="entete__toggle_menu_burger menu_burger" id="toggle_menu_burger">
+      <label for="toggle_menu_burger" class="bouton_toggle_menu menu_burger">
+        <span class="icone burger">&#9776;</span>
+        <span class="icone fermer">&#128473;</span>
+      </label>
+
       <div class="entete__navigation">
+
+
+
         <input type="checkbox" class="entete__toggle_categories" id="toggle_categories">
         <label for="toggle_categories" class="bouton_toggle">
           <span class="fleche droite">&#9205;</span>
           <span class="fleche gauche">&#9204;</span>
         </label>
-
-        <div class="menu_burger">
-          <input type="checkbox" class="entete__toggle_menu_burger" id="toggle_menu_burger">
-          <label for="toggle_menu_burger" class="bouton_toggle_menu">
-            <span class="menu burger">&#9776;</span>
-            <span class="menu fermer">&#10006;</span>
-          </label>
-        </div>
 
         <?php wp_nav_menu(array(
           'menu' => 'principal',
@@ -44,5 +47,6 @@
         <?php get_search_form() ?>
 
       </div> <!-- fin entete__navigation  -->
+
     </div>
   </header>

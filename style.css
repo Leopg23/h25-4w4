@@ -265,14 +265,9 @@ body {
   text-wrap: nowrap;
   margin-right: 2rem;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .entete__navigation {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 20px;
-    flex-direction: column;
-    width: 100vw;
+    display: none;
   }
 }
 .entete__navigation .bouton_toggle {
@@ -281,6 +276,11 @@ body {
   user-select: none;
 }
 @media screen and (min-width: 1200px) {
+  .entete__navigation .bouton_toggle {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
   .entete__navigation .bouton_toggle {
     display: none;
   }
@@ -304,6 +304,34 @@ body {
 .entete__navigation .entete__toggle_categories:checked + .bouton_toggle .gauche {
   display: block;
   margin-right: clamp(10px, 2vw, 20px);
+}
+.entete .menu_burger {
+  display: none;
+  cursor: pointer;
+  user-select: none;
+  font-size: 2.5rem;
+  margin-right: 10vh;
+}
+@media screen and (max-width: 768px) {
+  .entete .menu_burger {
+    display: block;
+  }
+}
+.entete .icone {
+  display: none;
+  font-size: 2rem;
+}
+.entete .burger {
+  display: block;
+}
+.entete .entete__toggle_menu_burger:checked ~ .entete__navigation {
+  display: flex !important;
+}
+.entete .entete__toggle_menu_burger:checked + .bouton_toggle_menu .burger {
+  display: none;
+}
+.entete .entete__toggle_menu_burger:checked + .bouton_toggle_menu .fermer {
+  display: block;
 }
 .entete__logo {
   margin: 0;
