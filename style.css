@@ -340,7 +340,7 @@ body {
   align-self: end;
 }
 .hero__contenu .hero__description {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1.4vw, 1.2rem);
   align-self: start;
 }
 
@@ -353,13 +353,11 @@ footer {
 }
 
 .piedpage {
-  height: 20%;
   display: grid;
   align-content: start;
   grid-template: 1fr/repeat(4, 1fr);
 }
 .piedpage__s1, .piedpage__s2, .piedpage__s3, .piedpage__s4 {
-  border-right: rgba(255, 255, 255, 0.5) 1px solid;
   height: 100%;
   display: flex;
   flex-direction: column;

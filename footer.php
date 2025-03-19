@@ -7,7 +7,7 @@ $piedpage_auteur = get_theme_mod('piedpage_auteur', 'Default Title');
   <div class="piedpage global">
     <section class="piedpage__s1">
       <h5 class="piedpage__s1__titre p2p_titre">
-        description
+        Description
       </h5>
       <p class="piedpage__s1__description">
         Découvrez le monde avec nous ! Suivez nos aventures, conseils et inspirations pour vos prochains voyages. © [Travel Inc] - Tous droits réservés.
@@ -52,7 +52,7 @@ $piedpage_auteur = get_theme_mod('piedpage_auteur', 'Default Title');
       </h5>
       <div class="piedpage__s4__recherche">
         <div class="piedpage__s4__recherche__coord">
-          Recherchez des mots clés
+            Entrez des mots-clés pour votre recherche
         </div>
         <div class="piedpage__s4__recherche__form">
           <?php get_search_form();   ?>
