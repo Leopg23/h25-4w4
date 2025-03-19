@@ -223,6 +223,7 @@ Les layouts
 //////////////////////////////////// */
 body {
   background-color: #232323;
+  color: white;
 }
 
 .populaire {
@@ -238,6 +239,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(300px, 240px));
   gap: 30px;
   align-items: center;
+  justify-content: center;
 }
 .global article {
   translate: 0 -20vh;
@@ -340,6 +342,7 @@ body {
   align-self: end;
 }
 .hero__contenu .hero__description {
+  display: inline;
   font-size: clamp(0.8rem, 1.4vw, 1.2rem);
   align-self: start;
 }

@@ -1,10 +1,10 @@
-.hero {   
+.hero {
   background-repeat: no-repeat;
   background-size: cover;
 
   &__contenu {
     display: grid;
-    
+
     grid-template: 50px 100px 50px / 1fr;
     padding: 0 0 0 5vw;
     margin: 10 0;
@@ -12,17 +12,17 @@
     min-height: 60vh;
     width: 50%;
 
-    @media screen and (min-width: 1300px){
+    @media screen and (min-width: 1300px) {
       align-content: center;
     }
-    .hero__titre{
+    .hero__titre {
       align-self: end;
     }
-    .hero__description{
+    
+    .hero__description {
+      display: inline;
       font-size: clamp(0.8rem, 1.4vw, 1.2rem);
       align-self: start;
     }
-
-    
   }
 }

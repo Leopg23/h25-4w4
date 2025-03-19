@@ -26,14 +26,20 @@
           <span class="fleche droite">&#9205;</span>
           <span class="fleche gauche">&#9204;</span>
         </label>
+
+        <div class="menu_burger">
+          <input type="checkbox" class="entete__toggle_menu_burger" id="toggle_menu_burger">
+          <label for="toggle_menu_burger" class="bouton_toggle_menu">
+            <span class="menu burger">&#9776;</span>
+            <span class="menu fermer">&#10006;</span>
+          </label>
+        </div>
+
         <?php wp_nav_menu(array(
           'menu' => 'principal',
           'container' => 'nav',
           'container_class' => 'entete__menu'
         )); ?>
-
-        
-
 
         <?php get_search_form() ?>
 
