@@ -171,7 +171,7 @@ Les composants
   flex: 1 1 300px;
   max-width: 300px;
   height: 350px;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 .carte__contenu {
   display: flex;
@@ -233,6 +233,29 @@ Les composants
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
 }
 
+.single_post {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  translate: 0 !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.single_post__article {
+  margin-bottom: 50px;
+  padding: 20px;
+  width: 50vw;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.single_post header {
+  min-width: 100%;
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
@@ -240,6 +263,10 @@ body {
   background-color: #232323;
   color: white;
   overflow-x: hidden;
+}
+
+.search {
+  translate: 0 20vh;
 }
 
 .populaire {

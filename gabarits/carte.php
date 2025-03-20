@@ -5,7 +5,7 @@
  */
 
 ?>
-<article class="carte carte--grande" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>')">
+<article class="carte carte--grande" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>')">
   <!-- <figure class="carte__image">
      <?php
 
