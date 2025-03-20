@@ -46,7 +46,66 @@ function theme_tp_customize_register($wp_customize)
     'label' => __('Hero Background Image', 'theme_tp'),
     'section' => 'hero_section',
   )));
-
+  ////////////////////////////////////////////// image en arrière plan _zen
+  $wp_customize->add_setting('hero_background_Zen', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée zen
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_Zen', array(
+    'label' => __('Hero Background Image Zen', 'theme_tp'),
+    'section' => 'hero_section',
+  )));
+  ////////////////////////////////////////////// image en arrière plan_croisiere
+  $wp_customize->add_setting('hero_background_Croisière', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée croisiere
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_Croisière', array(
+    'label' => __('Hero Background Image Croisiere', 'theme_tp'),
+    'section' => 'hero_section',
+  )));
+  ////////////////////////////////////////////// image en arrière plan_economique
+  $wp_customize->add_setting('hero_background_Économique', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée economique
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_Économique', array(
+    'label' => __('Hero Background Image Economique', 'theme_tp'),
+    'section' => 'hero_section',
+  )));
+  ////////////////////////////////////////////// image en arrière plan_aventure
+  $wp_customize->add_setting('hero_background_Aventure', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée aventure
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_Aventure', array(
+    'label' => __('Hero Background Image Aventure', 'theme_tp'),
+    'section' => 'hero_section',
+  )));
+  ////////////////////////////////////////////// image en arrière plan_culturel
+  $wp_customize->add_setting('hero_background_Culturel', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée culturel
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_Culturel', array(
+    'label' => __('Hero Background Image Culturel', 'theme_tp'),
+    'section' => 'hero_section',
+  )));
+  ////////////////////////////////////////////// image en arrière plan_repos
+  $wp_customize->add_setting('hero_background_Repos', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée repos
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_Repos', array(
+    'label' => __('Hero Background Image Repos', 'theme_tp'),
+    'section' => 'hero_section',
+  )));
   ////////////////////////////////////////////// couleure des caractères de la zone hero
   $wp_customize->add_setting('hero_couleur', array(
     'default' => '',
