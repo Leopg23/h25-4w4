@@ -6,7 +6,7 @@
 
 ### Titre: Découvez l'ailleurs avec Travel
 
-###
+### Description: Travel est un site de voyage minimaliste qui se démarque par son thème sombre, apaisant et moderne.
 
 ### Repo github : https://github.com/Leopg23/h25-4w4/tree/tp1
 #### Site en ligne sur WHC: https://gftnth00.mywhc.ca/4w4_14/
