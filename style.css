@@ -471,5 +471,34 @@ footer {
 }
 
 .p404 {
-  display: none;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.p404__contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.p404__description {
+  max-width: 50vw;
+}
+.p404__titre {
+  max-width: 50vw;
+}
+.p404__bouton {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  padding: 5px;
+  width: fit-content;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.p404__bouton:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
 }/*# sourceMappingURL=style.css.map */
