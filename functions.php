@@ -25,6 +25,7 @@ function theme_tp_customize_register($wp_customize)
     'title' => __('Section Hero', 'theme_tp'),
     'priority' => 30,
   ));
+
   ////////////////////////////////////////////// ajout de la donnée
   $wp_customize->add_setting('hero_auteur', array(
     'default' => __('Léo Paquet-Gauthier', 'theme_tp'),
@@ -106,24 +107,67 @@ function theme_tp_customize_register($wp_customize)
     'label' => __('Hero Background Image Repos', 'theme_tp'),
     'section' => 'hero_section',
   )));
-  $wp_customize->add_setting('hero_background_404', array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  ));
-  ////////////////////////////////////////////// ajout du controle de la donnée 404
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_404', array(
-    'label' => __('Hero Background Image 404', 'theme_tp'),
-    'section' => 'hero_section',
-  )));
   ////////////////////////////////////////////// couleure des caractères de la zone hero
   $wp_customize->add_setting('hero_couleur', array(
     'default' => '',
     'sanitize_callback' => 'esc_url_raw',
   ));
-  ////////////////////////////////////////////// ajout du controle de la donnée
+
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_couleur', array(
     'label' => __('Hero Couleur', 'theme_tp'),
     'section' => 'hero_section',
+  )));
+
+
+
+  ///////////////////////////////////////////// section 404 ////////////////////////////
+  $wp_customize->add_section('404_section', array(
+    'title' => __('Section 404', 'theme_tp'),
+    'priority' => 30,
+  ));
+
+  ////////////////////////////////////////////// ajout de la donnée
+  $wp_customize->add_setting('404_titre', array(
+    'default' => __('Léo Paquet-Gauthier', 'theme_tp'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée
+  $wp_customize->add_control('404_titre', array(
+    'label' => __('404 Title', 'theme_tp'),
+    'section' => '404_section',
+    'type' => 'text',
+  ));
+
+  ////////////////////////////////////////////// ajout de la donnée
+  $wp_customize->add_setting('404_description', array(
+    'default' => __('Léo Paquet-Gauthier', 'theme_tp'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée
+  $wp_customize->add_control('404_description', array(
+    'label' => __('404 Title', 'theme_tp'),
+    'section' => '404_section',
+    'type' => 'text',
+  ));
+
+  $wp_customize->add_setting('404_background', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, '404_background', array(
+    'label' => __('404 Background Image', 'theme_tp'),
+    'section' => '404_section',
+  )));
+
+  $wp_customize->add_setting('404_couleur', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, '404_couleur', array(
+    'label' => __('404 Couleur', 'theme_tp'),
+    'section' => '404_section',
   )));
 }
 
