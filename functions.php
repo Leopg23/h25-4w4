@@ -106,6 +106,15 @@ function theme_tp_customize_register($wp_customize)
     'label' => __('Hero Background Image Repos', 'theme_tp'),
     'section' => 'hero_section',
   )));
+  $wp_customize->add_setting('hero_background_404', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ////////////////////////////////////////////// ajout du controle de la donnée 404
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_404', array(
+    'label' => __('Hero Background Image 404', 'theme_tp'),
+    'section' => 'hero_section',
+  )));
   ////////////////////////////////////////////// couleure des caractères de la zone hero
   $wp_customize->add_setting('hero_couleur', array(
     'default' => '',
