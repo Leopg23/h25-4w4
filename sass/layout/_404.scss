@@ -1,0 +1,74 @@
+.p404 {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  &__contenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  &__description {
+    max-width: 50vw;
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
+  }
+  &__titre {
+    font-size: clamp(2rem, 3vw, 5rem);
+    max-width: 50vw;
+  }
+  &__bouton {
+    font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.18);
+    font-size: 1rem;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  &__menu {
+    margin: 5vw;
+    div > ul {
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+    }
+
+    div > ul > li {
+      padding: 5px;
+      width: fit-content;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+      &:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.3),
+          rgba(255, 255, 255, 0.1)
+        );
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      div > ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      div > ul > li {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

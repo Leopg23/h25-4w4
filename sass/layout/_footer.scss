@@ -2,34 +2,68 @@
   --------------------------------- Layout du pied de page
 */
 
-footer{
-  background-color: rgb(236, 136, 13);
-  color : #000;
+footer {
+  background-color: rgb(103, 30, 30);
+  color: #ffffff;
 }
 
-.piedpage{
+.piedpage {
+  display: grid;
+  align-content: start;
+  grid-template: 1fr / repeat(4, 1fr);
+
+  &__s1,
+  &__s2,
+  &__s3,
+  &__s4 {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    &__s1{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 3rem;
-        &__externe {
-            flex : 0 0 20%;
-            & .menu { //ul
-                display : flex;
-                flex-direction: column;
-            }
+    align-items: flex-start;
 
-
-        }
-        &__adresse{
-            flex : 0 0 40%;
-            &__coord{}
-            &__recherche{}
-        }
-        &__description{
-            flex:1 0 400px;
-        }
+    .p2p_titre {
+      
     }
+  }
+
+  &__s1 {
+    &__description {
+      margin: 0;
+      flex: 1 0;
+    }
+  }
+
+  &__s2 {
+    &__externe {
+      flex: 0 0 20%;
+      & .menu {
+        margin: 0;
+        padding: 0;
+        //ul
+        display: flex;
+        flex-direction: column;
+        font-size: clamp(0.8rem, 1.7vw, 1rem);
+      }
+    }
+  }
+
+  &__s3 {
+    &__courriel {
+      margin-top: 0;
+    }
+  }
+
+  &__s4 {
+    &__recherche {
+      flex: 0 0 40%;
+      font-size: clamp(0.8rem, 1.7vw, 1rem);
+      &__coord {
+      }
+      &__form {
+        .recherche {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
 }
