@@ -1,0 +1,11 @@
+.hero__carrousel{
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  
+  &__carrousel{
+    position:absolute;
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+  }
+}
