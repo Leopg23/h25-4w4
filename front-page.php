@@ -49,7 +49,7 @@ $hero_couleur = get_theme_mod('hero_couleur', '');
   }
   ?>
   <h2 class="destination__titre">Articles de la catégorie</h2>
-  <div class="destination__list">
+  <div class="destination__liste">
 
   </div>
 </section>

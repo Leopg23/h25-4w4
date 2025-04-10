@@ -182,7 +182,7 @@ Les composants
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 0 0 20px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(69, 69, 69, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 .carte__bouton {
@@ -255,6 +255,109 @@ Les composants
 }
 .single_post header {
   min-width: 100%;
+}
+
+.destination {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  translate: 0 -20vh;
+  margin: 5vw;
+}
+.destination .categorie__ul {
+  margin-top: 2rem;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.destination .categorie__ul__li {
+  cursor: pointer;
+  font-size: clamp(1.2em, 3vw, 1.5rem);
+  padding: 0.5rem 1rem;
+}
+.destination .categorie__ul .active {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+}
+.destination .categorie__ul__separateur {
+  width: 1px;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+.destination .categorie__ul :last-child {
+  display: none;
+}
+.destination__titre {
+  margin-top: 5rem;
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.destination__liste {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  gap: 1rem;
+}
+.destination__liste > div {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 3px solid rgba(69, 69, 69, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 10px;
+}
+.destination__liste__label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.destination__liste__label h3 {
+  cursor: pointer;
+  font-size: clamp(1.2rem, 2vw, 1.3rem);
+}
+.destination__liste__label__fleche {
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+.destination__liste__label__droite:checked + .destination__liste__label__bas {
+  display: block !important;
+}
+.destination__liste__label__droite + .destination__liste__label__bas {
+  display: none;
+}
+.destination__liste__label__bas {
+  display: block;
+}
+.destination__liste__texte {
+  display: none;
+}
+.destination__liste__texte a {
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.18);
+  font-size: 1rem;
+}
+.destination__liste__texte a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.destination__liste__checkbox {
+  display: none;
+}
+.destination__liste__checkbox:checked + .destination__liste__label {
+  cursor: default;
+}
+.destination__liste__checkbox:checked ~ .destination__liste__texte {
+  display: block;
+}
+.destination__liste__checkbox:checked + .destination__liste__label .destination__liste__label__bas {
+  display: block;
+}
+.destination__liste__checkbox:checked + .destination__liste__label .destination__liste__label__droite {
+  display: none;
 }
 
 /* /////////////////////////////////

@@ -96,8 +96,4 @@ add_action('pre_get_posts', 'modifie_requete_principal');
 //         echo '<p>Catégorie parente introuvable.</p>';
 //     }
 // }
-
-// function destination__list() {
-    
-// }
 ?>
