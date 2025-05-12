@@ -1,7 +1,7 @@
 .hero {
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   &__contenu {
     display: grid;
 
@@ -55,8 +55,23 @@
 
     &__input {
       // display: none;
-      translate: 0 -20vh;
+    }
+    &__input:checked + .hero__label {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
 
+    &__label {
+      translate: 0 -20vh;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
     }
   }
 }

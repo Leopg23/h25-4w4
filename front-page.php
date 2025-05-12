@@ -35,9 +35,12 @@ $hero_couleur = get_theme_mod('hero_couleur', '');
   <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[1] ?>)"></div>
   <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[2] ?>)"></div>
   <div class="hero__radio">
-    <input class="hero__radio__input" data-id_radio="0" type="radio" name="carroussel" checked="checked">
-    <input class="hero__radio__input" data-id_radio="1" type="radio" name="carroussel">
-    <input class="hero__radio__input" data-id_radio="2" type="radio" name="carroussel">
+    <input id="rad_1" class="hero__radio__input" data-id_radio="0" type="radio" name="carroussel" >
+    <label for="rad_1" class="hero__radio__label"></label>
+    <input id="rad_2" class="hero__radio__input" data-id_radio="1" type="radio" name="carroussel" checked="checked">
+    <label for="rad_2" class="hero__radio__label"></label>
+    <input id="rad_3" class="hero__radio__input" data-id_radio="2" type="radio" name="carroussel">
+    <label for="rad_3"class="hero__radio__label"></label>
   </div>
 
 </section>
