@@ -13,9 +13,9 @@ $hero_couleur = get_theme_mod('hero_couleur', '');
     color: <?php echo $hero_couleur; ?>;
   }
 </style>
-<section class="hero" style="background-image: url('<?php echo $hero_background[$index]; ?>')">
+<section class="hero">
   <?php get_header(); ?>
-  <?php get_template_part("gabarits/hero"); ?>
+  <?php get_template_part("gabarits/herot"); ?>
   <div class="hero__contenu global">
 
     <h1 class="hero__titre hero__couleur"><?php bloginfo('name'); ?></h1>

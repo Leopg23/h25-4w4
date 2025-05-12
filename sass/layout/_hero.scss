@@ -39,6 +39,7 @@
     background-size: cover;
     z-index: -1;
     opacity: 0;
+    translate: 0 -100vh;
     &--active {
       // .hero__carrousel--active
       opacity: 1;
@@ -53,7 +54,9 @@
     gap: 2rem;
 
     &__input {
-      display: none;
+      // display: none;
+      translate: 0 -20vh;
+
     }
   }
 }
