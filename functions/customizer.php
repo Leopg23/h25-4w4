@@ -43,17 +43,24 @@ function theme_tp_customize_register($wp_customize)
     'sanitize_callback' => 'esc_url_raw',
   ));
   
-  for($k = 0; $k < 10; $k++){
-    $wp_customize->add_setting('hero_background_'.$k, array(
+  for ($k = 0; $k < 3; $k++) {
+    $key = 'hero_background_' . $k;
+  
+    // Add setting
+    $wp_customize->add_setting($key, array(
       'default' => '',
       'sanitize_callback' => 'esc_url_raw',
     ));
+  
+    // Add control
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $key, array(
+      'label' => __('Hero Background Image ' . ($k + 1), 'theme_tp'),
+      'section' => 'hero_section',
+    )));
   }
+  
   ////////////////////////////////////////////// ajout du controle de la donnée
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
-    'label' => __('Hero Background Image' . ($k+1) , 'theme_tp'),
-    'section' => 'hero_section',
-  )));
+  
   ////////////////////////////////////////////// image en arrière plan _zen
   $wp_customize->add_setting('hero_background_Zen', array(
     'default' => '',

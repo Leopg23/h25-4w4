@@ -1,7 +1,7 @@
 .hero {
   background-repeat: no-repeat;
   background-size: cover;
-
+  
   &__contenu {
     display: grid;
 
@@ -18,15 +18,42 @@
     .hero__titre {
       align-self: end;
     }
-    
+
     .hero__description {
       display: inline;
       font-size: clamp(0.8rem, 1.4vw, 1.2rem);
       align-self: start;
     }
 
-    div p{
+    div p {
       font-size: clamp(0.8rem, 1.4vw, 1.2rem);
+    }
+  }
+
+  &__carrousel {
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+    &--active {
+      // .hero__carrousel--active
+      opacity: 1;
+    }
+  }
+  &__radio {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    &__input {
+      display: none;
     }
   }
 }
