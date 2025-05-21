@@ -43,21 +43,49 @@ function theme_tp_customize_register($wp_customize)
     'sanitize_callback' => 'esc_url_raw',
   ));
   
-  for ($k = 0; $k < 3; $k++) {
-    $key = 'hero_background_' . $k;
-  
-    // Add setting
-    $wp_customize->add_setting($key, array(
-      'default' => '',
-      'sanitize_callback' => 'esc_url_raw',
+  // Add a setting for the number of images
+$wp_customize->add_setting('hero_background_count', array(
+    'default' => 3,
+    'sanitize_callback' => 'absint',
+));
+
+$wp_customize->add_control('hero_background_count', array(
+    'label' => __('Number of Hero Images', 'theme_tp'),
+    'section' => 'hero_section',
+    'type' => 'number',
+    'input_attrs' => array(
+        'min' => 1,
+        'max' => 10,
+    ),
+));
+
+// Use the value to generate controls
+$count = get_theme_mod('hero_background_count', 3);
+for ($k = 0; $k < $count; $k++) {
+    $key_img = 'hero_background_' . $k;
+    $key_txt = 'hero_text_' . $k;
+
+    // Image
+    $wp_customize->add_setting($key_img, array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
     ));
-  
-    // Add control
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $key, array(
-      'label' => __('Hero Background Image ' . ($k + 1), 'theme_tp'),
-      'section' => 'hero_section',
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $key_img, array(
+        'label' => __('Hero Background Image ' . ($k + 1), 'theme_tp'),
+        'section' => 'hero_section',
     )));
-  }
+
+    // Texte
+    $wp_customize->add_setting($key_txt, array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control($key_txt, array(
+        'label' => __('Texte pour l’image ' . ($k + 1), 'theme_tp'),
+        'section' => 'hero_section',
+        'type' => 'text',
+    ));
+}
   
   ////////////////////////////////////////////// ajout du controle de la donnée
   

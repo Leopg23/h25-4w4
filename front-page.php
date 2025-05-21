@@ -1,11 +1,16 @@
 <?php
 $hero_background = [];
-$index = rand(0, 2); // Random index between 0 and 2
+$hero_background_count = get_theme_mod('hero_background_count', 3); // Get the dynamic count
 
-for ($k = 0; $k < 3; $k++) {
+for ($k = 0; $k < $hero_background_count; $k++) {
   $hero_background[$k] = get_theme_mod('hero_background_' . $k, '');
 }
-// $hero_background = get_theme_mod('hero_background', '');
+
+$hero_texts = [];
+for ($k = 0; $k < $hero_background_count; $k++) {
+    $hero_texts[$k] = get_theme_mod('hero_text_' . $k, '');
+}
+
 $hero_couleur = get_theme_mod('hero_couleur', '');
 ?>
 <style>
@@ -24,27 +29,25 @@ $hero_couleur = get_theme_mod('hero_couleur', '');
     </p>
 
     <div class="hero__icone">
-
-      <img src="https://s2.svgbox.net/social.svg?ic=facebook&color= <?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
-      <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color= <?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
-      <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color= <?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
+      <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=<?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
+      <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=<?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
+      <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=<?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
     </div>
   </div>
 
-  <div class="hero__carrousel  hero__carrousel--active  " style="background-image: url(<?php echo $hero_background[0] ?>)"></div>
-  <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[1] ?>)"></div>
-  <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[2] ?>)"></div>
-  <div class="hero__radio">
-    <input id="rad_1" class="hero__radio__input" data-id_radio="0" type="radio" name="carroussel" >
-    <label for="rad_1" class="hero__radio__label"></label>
-    <input id="rad_2" class="hero__radio__input" data-id_radio="1" type="radio" name="carroussel" checked="checked">
-    <label for="rad_2" class="hero__radio__label"></label>
-    <input id="rad_3" class="hero__radio__input" data-id_radio="2" type="radio" name="carroussel">
-    <label for="rad_3"class="hero__radio__label"></label>
-  </div>
+  <?php for ($k = 0; $k < $hero_background_count; $k++): ?>
+    <div class="hero__carrousel<?php echo $k === 0 ? ' hero__carrousel--active' : ''; ?>" style="background-image: url(<?php echo esc_url($hero_background[$k]); ?>)"></div>
+  <?php endfor; ?>
 
+  <div class="hero__radio">
+    <?php for ($k = 0; $k < $hero_background_count; $k++): ?>
+      <input id="rad_<?php echo $k + 1; ?>" class="hero__radio__input" data-id_radio="<?php echo $k; ?>" type="radio" name="carroussel" <?php echo $k === 0 ? 'checked="checked"' : ''; ?>>
+      <label for="rad_<?php echo $k + 1; ?>" class="hero__radio__label"></label>
+    <?php endfor; ?>
+  </div>
 </section>
 <section class="populaire">
+  <?php categorie_par_destination('Populaire'); ?>
   <div class="global">
     <?php if (have_posts()) : while (have_posts()) : the_post();
         if (in_category("galerie")) {
@@ -72,6 +75,10 @@ $hero_couleur = get_theme_mod('hero_couleur', '');
 </section>
 
 <?php get_footer(); ?>
+
+<script>
+  const heroTexts = <?php echo json_encode($hero_texts); ?>;
+</script>
 </body>
 
 </html>

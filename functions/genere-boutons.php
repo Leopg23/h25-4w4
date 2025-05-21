@@ -27,3 +27,31 @@ function categories_liste($parent_slug){
         }
     }
 }
+
+function categorie_par_destination($cat_a_retirer = '') {
+    $categories = get_categories([
+        'hide_empty' => false,
+    ]);
+    // Liste des catégories autorisées (insensible à la casse)
+$categories_autorisees = [
+    'aventure',
+    'croisière',
+    'culturel',
+    'pleine nature',
+    'repos',
+    'sport',
+    'zen',
+    'populaire'
+];
+    echo '<div class="populaire__categories">';
+    foreach ($categories as $cat) {
+        if (
+            strtolower($cat->name) !== strtolower($cat_a_retirer) &&
+            in_array(strtolower($cat->name), $categories_autorisees)
+        ) {
+            $cat_link = get_category_link($cat->term_id);
+            echo '<a class="populaire__categorie-btn" href="' . esc_url($cat_link) . '">' . esc_html($cat->name) . '</a> ';
+        }
+    }
+    echo '</div>';
+}
