@@ -18,7 +18,7 @@ $cat_slug = $cat_obj->slug;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    translate: 0 -.5rem;
+    translate: 0 -1rem;
 
     .global {
       article {

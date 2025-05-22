@@ -613,6 +613,16 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+@media screen and (min-width: 1900px) {
+  .hero__radio__label {
+    translate: 0 -30vh;
+  }
+}
+@media screen and (max-width: 728px) {
+  .hero__radio__label {
+    translate: 0 -30vh;
+  }
+}
 /*
   --------------------------------- Layout du pied de page
 */

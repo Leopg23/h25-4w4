@@ -98,3 +98,16 @@
     }
   }
 }
+
+@media screen and (min-width: 1900px) {
+  .hero__radio__label {
+    translate: 0 -30vh;
+  }
+  
+}
+@media screen and (max-width: 728px) {
+  .hero__radio__label {
+    translate: 0 -30vh;
+  }
+  
+}
