@@ -28,11 +28,7 @@ $hero_couleur = get_theme_mod('hero_couleur', '');
       <?php bloginfo('description'); ?>
     </p>
 
-    <div class="hero__icone">
-      <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=<?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
-      <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=<?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
-      <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=<?php echo substr($hero_couleur, 1); ?>" width="20" height="20">
-    </div>
+    <?php afficher_icones_sociaux(); ?>
   </div>
 
   <?php for ($k = 0; $k < $hero_background_count; $k++): ?>

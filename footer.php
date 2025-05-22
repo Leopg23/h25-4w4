@@ -62,5 +62,6 @@ $piedpage_auteur = get_theme_mod('piedpage_auteur', 'Default Title');
 
 
   </div>
+  
 </footer>
 <?php wp_footer() ?>

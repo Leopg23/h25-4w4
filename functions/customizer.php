@@ -1,5 +1,5 @@
 <?php
-  //----------------------------------------------------------------------------------P1_CUSTOMIZER
+//----------------------------------------------------------------------------------P1_CUSTOMIZER
 // CETTE PARTIE SERT A INSERER DES VARIABLE A UTILISER A TRAVERS LE SITE QUI POURONT ETRE CHANGEES DANS 
 // L'APPLI WORDPRESS
 // 
@@ -37,58 +37,58 @@ function theme_tp_customize_register($wp_customize)
     'type' => 'text',
   ));
   ////////////////////////////////////////////// image en arrière plan
- 
+
   $wp_customize->add_setting('hero_background', array(
     'default' => '',
     'sanitize_callback' => 'esc_url_raw',
   ));
-  
+
   // Add a setting for the number of images
-$wp_customize->add_setting('hero_background_count', array(
+  $wp_customize->add_setting('hero_background_count', array(
     'default' => 3,
     'sanitize_callback' => 'absint',
-));
+  ));
 
-$wp_customize->add_control('hero_background_count', array(
+  $wp_customize->add_control('hero_background_count', array(
     'label' => __('Number of Hero Images', 'theme_tp'),
     'section' => 'hero_section',
     'type' => 'number',
     'input_attrs' => array(
-        'min' => 1,
-        'max' => 10,
+      'min' => 1,
+      'max' => 10,
     ),
-));
+  ));
 
-// Use the value to generate controls
-$count = get_theme_mod('hero_background_count', 3);
-for ($k = 0; $k < $count; $k++) {
+  // Use the value to generate controls
+  $count = get_theme_mod('hero_background_count', 3);
+  for ($k = 0; $k < $count; $k++) {
     $key_img = 'hero_background_' . $k;
     $key_txt = 'hero_text_' . $k;
 
     // Image
     $wp_customize->add_setting($key_img, array(
-        'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $key_img, array(
-        'label' => __('Hero Background Image ' . ($k + 1), 'theme_tp'),
-        'section' => 'hero_section',
+      'label' => __('Hero Background Image ' . ($k + 1), 'theme_tp'),
+      'section' => 'hero_section',
     )));
 
     // Texte
     $wp_customize->add_setting($key_txt, array(
-        'default' => '',
-        'sanitize_callback' => 'sanitize_text_field',
+      'default' => '',
+      'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control($key_txt, array(
-        'label' => __('Texte pour l’image ' . ($k + 1), 'theme_tp'),
-        'section' => 'hero_section',
-        'type' => 'text',
+      'label' => __('Texte pour l’image ' . ($k + 1), 'theme_tp'),
+      'section' => 'hero_section',
+      'type' => 'text',
     ));
-}
-  
+  }
+
   ////////////////////////////////////////////// ajout du controle de la donnée
-  
+
   ////////////////////////////////////////////// image en arrière plan _zen
   $wp_customize->add_setting('hero_background_Zen', array(
     'default' => '',
@@ -211,7 +211,73 @@ for ($k = 0; $k < $count; $k++) {
     'label' => __('404 Couleur', 'theme_tp'),
     'section' => '404_section',
   )));
+
+  // Facebook
+  $wp_customize->add_setting('social_facebook_url', ['default' => '', 'sanitize_callback' => 'esc_url_raw']);
+  $wp_customize->add_setting('social_facebook_icon', ['default' => '', 'sanitize_callback' => 'esc_url_raw']);
+  $wp_customize->add_control('social_facebook_url', [
+    'label' => __('URL Facebook', 'theme_tp'),
+    'section' => 'hero_section',
+    'type' => 'url',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'social_facebook_icon', [
+    'label' => __('Icône Facebook', 'theme_tp'),
+    'section' => 'hero_section',
+    'settings' => 'social_facebook_icon',
+  ]));
+
+  // LinkedIn
+  $wp_customize->add_setting('social_linkedin_url', ['default' => '', 'sanitize_callback' => 'esc_url_raw']);
+  $wp_customize->add_setting('social_linkedin_icon', ['default' => '', 'sanitize_callback' => 'esc_url_raw']);
+  $wp_customize->add_control('social_linkedin_url', [
+    'label' => __('URL LinkedIn', 'theme_tp'),
+    'section' => 'hero_section',
+    'type' => 'url',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'social_linkedin_icon', [
+    'label' => __('Icône LinkedIn', 'theme_tp'),
+    'section' => 'hero_section',
+    'settings' => 'social_linkedin_icon',
+  ]));
+
+  // Stack Overflow
+  $wp_customize->add_setting('social_stackoverflow_url', ['default' => '', 'sanitize_callback' => 'esc_url_raw']);
+  $wp_customize->add_setting('social_stackoverflow_icon', ['default' => '', 'sanitize_callback' => 'esc_url_raw']);
+  $wp_customize->add_control('social_stackoverflow_url', [
+    'label' => __('URL Stack Overflow', 'theme_tp'),
+    'section' => 'hero_section',
+    'type' => 'url',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'social_stackoverflow_icon', [
+    'label' => __('Icône Stack Overflow', 'theme_tp'),
+    'section' => 'hero_section',
+    'settings' => 'social_stackoverflow_icon',
+  ]));
+
+  // GitHub
+  $wp_customize->add_setting('social_github_url', ['default' => '', 'sanitize_callback' => 'esc_url_raw']);
+  $wp_customize->add_setting('social_github_icon', ['default' => '', 'sanitize_callback' => 'esc_url_raw']);
+  $wp_customize->add_control('social_github_url', [
+    'label' => __('URL GitHub', 'theme_tp'),
+    'section' => 'hero_section',
+    'type' => 'url',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'social_github_icon', [
+    'label' => __('Icône GitHub', 'theme_tp'),
+    'section' => 'hero_section',
+    'settings' => 'social_github_icon',
+  ]));
+
+
+
+  $wp_customize->add_setting('default_destination_image', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'default_destination_image', array(
+    'label' => __('Image par défaut pour les destinations', 'theme_tp'),
+    'section' => 'hero_section', // ou une section de ton choix
+    'settings' => 'default_destination_image',
+  )));
 }
-
-
-?>

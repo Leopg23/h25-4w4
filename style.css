@@ -271,12 +271,13 @@ Les composants
 }
 .destination .categorie__ul__li {
   cursor: pointer;
+  border-radius: 20px;
   font-size: clamp(1.2em, 3vw, 1.5rem);
   padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out;
 }
 .destination .categorie__ul .active {
   background-color: rgba(255, 255, 255, 0.18);
-  border-radius: 20px;
 }
 .destination .categorie__ul__separateur {
   width: 1px;
