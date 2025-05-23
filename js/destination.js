@@ -86,3 +86,22 @@ function afficherDestinations(destinations) {
 document.addEventListener('DOMContentLoaded', () => {
   chargerDestinations('France'); // Pays par défaut
 });
+
+const pays = ["France", "États-Unis", "Canada", "Argentine", "Chili", "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande", "Chine", "Grèce", "Suisse"];
+
+function genererMenuPays() {
+  let menu = '<ul class="menu-pays">';
+  pays.forEach(p => {
+    menu += `<li><button data-pays="${p}">${p}</button></li>`;
+  });
+  menu += '</ul>';
+  document.querySelector('.rest-api').insertAdjacentHTML('beforebegin', menu);
+}
+
+document.addEventListener('click', (e) => {
+  if(e.target.matches('.menu-pays button')){
+    chargerDestinations(e.target.dataset.pays);
+  }
+});
+
+document.addEventListener('DOMContentLoaded', genererMenuPays);
