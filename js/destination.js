@@ -67,3 +67,22 @@
       );
   }
 })();
+
+async function chargerDestinations(requete, type = 'search') {
+  let url = `/wp-json/wp/v2/posts?${type}=${requete}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  afficherDestinations(data);
+}
+
+function afficherDestinations(destinations) {
+  let html = '';
+  destinations.forEach(destination => {
+    html += `<div class="destination"><h3>${destination.title.rendered}</h3>${destination.content.rendered}</div>`;
+  });
+  document.querySelector('.rest-api').innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  chargerDestinations('France'); // Pays par défaut
+});
