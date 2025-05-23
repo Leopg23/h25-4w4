@@ -12,7 +12,7 @@ $cat_slug = $cat_obj->slug;
     color: <?php echo $hero_couleur; ?>;
   }
 
-  /* sa marche quand meme malgre que c'est souligne en rouge */
+  /* ca marche quand meme malgre que c'est souligne en rouge */
   .<?php echo esc_attr($cat_slug); ?> {
     display: flex;
     justify-content: center;
