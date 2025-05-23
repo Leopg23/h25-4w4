@@ -64,7 +64,7 @@ $hero_couleur = get_theme_mod('hero_couleur', '');
     echo '<p>Function categories_liste() is not defined. Please ensure it is implemented.</p>';
   }
   ?>
-  <h2 class="destination__titre">Articles de la catégorie</h2>
+  <h2 class="destination__titre" >Articles de la catégorie</h2>
   <div class="destination__liste">
 
   </div>

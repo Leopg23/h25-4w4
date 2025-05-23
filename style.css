@@ -267,7 +267,9 @@ Les composants
   padding: 0;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
 }
 .destination .categorie__ul__li {
   cursor: pointer;
@@ -358,6 +360,9 @@ Les composants
 }
 .destination__liste__checkbox:checked + .destination__liste__label .destination__liste__label__droite {
   display: none;
+}
+.destination .deuxieme-vague {
+  rotate: 180deg;
 }
 
 /* /////////////////////////////////

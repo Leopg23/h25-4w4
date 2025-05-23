@@ -23,8 +23,11 @@ if (have_posts()) : while (have_posts()) : the_post();
 endif;
 ?>
 <!-- Contenu REST API dynamique -->
-<section class="section-menu-pays"></section>
-<section class="rest-api"></section>
+<section class="destination">
+  <section class="section-menu-pays "></section>
+  <div class="destination__liste"></div>
+</section>
+
 
 
 <?php echo genere_vague('#f0f0f0', '#ffffff'); ?>
