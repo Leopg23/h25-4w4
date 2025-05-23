@@ -369,10 +369,6 @@ body {
   overflow-x: hidden;
 }
 
-.search {
-  translate: 0 20vh;
-}
-
 .populaire {
   display: flex;
   justify-content: center;

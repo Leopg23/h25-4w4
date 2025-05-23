@@ -81,6 +81,11 @@ function modifie_requete_principal($query)
 }
 add_action('pre_get_posts', 'modifie_requete_principal');
 
+function enqueue_destination_script() {
+    wp_enqueue_script('destination-js', get_template_directory_uri() . '/js/destination.js', array(), false, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_destination_script');
+
 // function categories_liste($parent_slug) {
 //     $parent_category = get_category_by_slug($parent_slug);
 //     if ($parent_category) {

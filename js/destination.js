@@ -10,7 +10,9 @@
   parcourir_bouton();
 
   // 🔽 Appliquer la classe active à la catégorie par défaut
-  const defaultActiveLi = document.querySelector(`.categorie__ul__li[data-category_id="${defaultCategoryId}"]`);
+  const defaultActiveLi = document.querySelector(
+    `.categorie__ul__li[data-category_id="${defaultCategoryId}"]`
+  );
   if (defaultActiveLi) {
     defaultActiveLi.classList.add("active");
   }
@@ -68,40 +70,109 @@
   }
 })();
 
-async function chargerDestinations(requete, type = 'search') {
-  let url = `/wp-json/wp/v2/posts?${type}=${requete}`;
-  const response = await fetch(url);
-  const data = await response.json();
-  afficherDestinations(data);
-}
+(function () {
+  console.log("destination.js");
 
-function afficherDestinations(destinations) {
-  let html = '';
-  destinations.forEach(destination => {
-    html += `<div class="destination"><h3>${destination.title.rendered}</h3>${destination.content.rendered}</div>`;
-  });
-  document.querySelector('.rest-api').innerHTML = html;
-}
+  const paysListe = [
+    "France",
+    "États-Unis",
+    "Canada",
+    "Argentine",
+    "Chili",
+    "Belgique",
+    "Maroc",
+    "Mexique",
+    "Japon",
+    "Italie",
+    "Islande",
+    "Chine",
+    "Grèce",
+    "Suisse",
+  ];
 
-document.addEventListener('DOMContentLoaded', () => {
-  chargerDestinations('France'); // Pays par défaut
-});
+  const paysParDefaut = "France";
+  genererMenuPays(paysListe);
+  chargerDestinationsParRecherche(paysParDefaut);
+  activerBoutonsPays();
 
-const pays = ["France", "États-Unis", "Canada", "Argentine", "Chili", "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande", "Chine", "Grèce", "Suisse"];
+  // 🔄 Génère le menu HTML dynamiquement
+  function genererMenuPays(pays) {
+    const conteneur = document.querySelector(".section-menu-pays");
+    if (!conteneur) return;
 
-function genererMenuPays() {
-  let menu = '<ul class="menu-pays">';
-  pays.forEach(p => {
-    menu += `<li><button data-pays="${p}">${p}</button></li>`;
-  });
-  menu += '</ul>';
-  document.querySelector('.rest-api').insertAdjacentHTML('beforebegin', menu);
-}
-
-document.addEventListener('click', (e) => {
-  if(e.target.matches('.menu-pays button')){
-    chargerDestinations(e.target.dataset.pays);
+    let html = '<ul class="categorie__ul">';
+    pays.forEach((p) => {
+      html += `<li class="categorie__ul__li" data-pays="${p}">${p}</li>`;
+    });
+    html += "</ul>";
+    conteneur.innerHTML = html;
   }
-});
 
-document.addEventListener('DOMContentLoaded', genererMenuPays);
+  // 🧠 Gère les clics sur les boutons de pays
+  function activerBoutonsPays() {
+    const boutons = document.querySelectorAll(".categorie__ul__li");
+
+    boutons.forEach((bouton) => {
+      bouton.addEventListener("mousedown", function () {
+        const paysChoisi = bouton.dataset.pays;
+        console.log("Pays sélectionné :", paysChoisi);
+
+        // ❌ Enlève la classe active
+        boutons.forEach((b) => b.classList.remove("active"));
+
+        // ✅ Ajoute la classe active
+        bouton.classList.add("active");
+
+        // 🔄 Charge les destinations correspondantes
+        chargerDestinationsParRecherche(paysChoisi);
+      });
+    });
+
+    // 🔽 Active visuellement le pays par défaut
+    const actifDefaut = document.querySelector(
+      `.categorie__ul__li[data-pays="${paysParDefaut}"]`
+    );
+    if (actifDefaut) actifDefaut.classList.add("active");
+  }
+
+  // 🔍 Charge les destinations avec la requête REST API `search`
+  async function chargerDestinationsParRecherche(pays) {
+    const url = `${
+      window.location.origin
+    }/4w4/wp-json/wp/v2/posts?search=${encodeURIComponent(pays)}`;
+    console.log("URL utilisée :", url);
+
+    try {
+      const response = await fetch(url);
+      const text = await response.text();
+      console.log("Réponse brute REST API :", text);
+      const data = JSON.parse(text);
+      afficherDestinations(data);
+    } catch (err) {
+      console.error("Erreur de chargement REST API :", err);
+    }
+  }
+
+  // 🖼️ Affiche les résultats dans la page
+  function afficherDestinations(destinations) {
+    const conteneur = document.querySelector(".rest-api");
+    if (!conteneur) return;
+
+    if (destinations.length === 0) {
+      conteneur.innerHTML = "<p>Aucune destination trouvée.</p>";
+      return;
+    }
+
+    let html = "";
+    destinations.forEach((dest) => {
+      html += `
+        <div class="destination">
+          <h3>${dest.title.rendered}</h3>
+          <div class="destination-content">${dest.content.rendered}</div>
+        </div>
+      `;
+    });
+
+    conteneur.innerHTML = html;
+  }
+})();
