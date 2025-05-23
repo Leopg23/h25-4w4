@@ -361,8 +361,8 @@ Les composants
 .destination__liste__checkbox:checked + .destination__liste__label .destination__liste__label__droite {
   display: none;
 }
-.destination .deuxieme-vague {
-  rotate: 180deg;
+.destination .vague {
+  width: 100%;
 }
 
 /* /////////////////////////////////

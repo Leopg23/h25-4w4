@@ -67,7 +67,7 @@ function categorie_par_destination($cat_a_retirer = '')
 <?php }*/
 function genere_vague($couleur_haut = '#ffffff', $couleur_bas = '#f3f4f5')
 { ?>
-    <svg id="visual" viewBox="0 0 1440 120" width="1440" height="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+   <svg id="visual" viewBox="0 0 1440 120" width="100%" height="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
         <rect x="0" y="0" width="1440" height="120" fill="#232323"></rect>
         <path d="M0 77L34.3 81.2C68.7 85.3 137.3 93.7 205.8 93.5C274.3 93.3 342.7 84.7 411.2 82.5C479.7 80.3 548.3 84.7 617 85.5C685.7 86.3 754.3 83.7 823 83.7C891.7 83.7 960.3 86.3 1028.8 85.7C1097.3 85 1165.7 81 1234.2 81.5C1302.7 82 1371.3 87 1405.7 89.5L1440 92" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#671e1e" stroke-width="40"></path>
     </svg>

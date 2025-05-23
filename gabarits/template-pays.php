@@ -13,15 +13,19 @@ get_header();
     Plongez au cœur de l’aventure et laissez-vous emporter par l’appel du large ! Notre planète regorge de destinations incroyables, chacune promettant une expérience unique et mémorable. Que vous rêviez de plages idylliques baignées de soleil, de sommets majestueux invitant à la randonnée, de villes vibrantes d’histoire et de modernité, ou de rencontres culturelles authentiques, il y a un pays fait pour vous.
   </p>
 </section>
+<div class="vague"><?php echo genere_vague('#ffffff', '#f0f0f0'); ?></div>
 
-<?php echo genere_vague('#ffffff', '#f0f0f0'); ?>
-<?php
-// Affiche la galerie WordPress si elle existe dans le contenu de la page
-if (have_posts()) : while (have_posts()) : the_post();
-    the_content();
-  endwhile;
-endif;
-?>
+
+<div class="pays_galerie">
+  <?php
+  // Affiche la galerie WordPress si elle existe dans le contenu de la page
+  if (have_posts()) : while (have_posts()) : the_post();
+      the_content();
+    endwhile;
+  endif;
+  ?>
+</div>
+
 <!-- Contenu REST API dynamique -->
 <section class="destination">
   <section class="section-menu-pays "></section>
